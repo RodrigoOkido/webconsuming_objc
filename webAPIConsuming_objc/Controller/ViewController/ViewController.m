@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import "MovieCell.h"
 
 @interface ViewController ()
 
@@ -22,8 +23,17 @@
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"movie_cell"];
-    cell.textLabel.text = @"Hello world";
+    MovieCell *cell = (MovieCell *) [tableView dequeueReusableCellWithIdentifier: @"movie_cell"];
+    
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    cell.movieTitle.text = @"Homem Aranha";
+    cell.movieDescription.text = @"Oi";
+    cell.movieImage.image = [UIImage systemImageNamed: @"star"];
+    
+    
     return cell;
 }
 

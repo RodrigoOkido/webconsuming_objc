@@ -17,6 +17,7 @@
 		2B7A63BA27EA173D00062D84 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63B927EA173D00062D84 /* Movie.m */; };
 		2B7A63BE27EA178500062D84 /* Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63BD27EA178500062D84 /* Gender.m */; };
 		2B7A63C227EA2C1400062D84 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63C127EA2C1400062D84 /* DetailViewController.m */; };
+		2B7A63C627EA387500062D84 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63C527EA387500062D84 /* MovieCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		2B7A63BF27EA179300062D84 /* Gender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gender.h; sourceTree = "<group>"; };
 		2B7A63C127EA2C1400062D84 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		2B7A63C327EA2C2400062D84 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		2B7A63C527EA387500062D84 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
+		2B7A63C727EA388700062D84 /* MovieCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 			children = (
 				2B7A63A527EA14A300062D84 /* ViewController.h */,
 				2B7A63A627EA14A300062D84 /* ViewController.m */,
+				2B7A63C727EA388700062D84 /* MovieCell.h */,
+				2B7A63C527EA387500062D84 /* MovieCell.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				2B7A63B227EA14A400062D84 /* main.m in Sources */,
 				2B7A63BE27EA178500062D84 /* Gender.m in Sources */,
 				2B7A63A427EA14A300062D84 /* SceneDelegate.m in Sources */,
+				2B7A63C627EA387500062D84 /* MovieCell.m in Sources */,
 				2B7A63C227EA2C1400062D84 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
