@@ -7,6 +7,8 @@
 
 #import "ViewController.h"
 #import "MovieCell.h"
+#import "Movie.h"
+#import "RequestMovieAPI_TMDB.h"
 
 @interface ViewController ()
 
@@ -16,11 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-
-    // Do any additional setup after loading the view.
+    RequestMovieAPI_TMDB *req = [[RequestMovieAPI_TMDB alloc] init];
+    NSDictionary *ing = [req getPopularMovie];
+    NSArray *movies = ing[@"results"];
+    
+    MovieObject movie;
+    
+    NSLog(@"%@", movies[1][@"title"]);
 }
 
 

@@ -8,14 +8,16 @@
 #ifndef Movie_h
 #define Movie_h
 
-@interface Movie : NSObject
+typedef struct Movie {
+    NSNumber *movie_id;
+    NSString *title;
+    NSArray<NSNumber *> *genres;
+    NSString *description;
+    NSString *image;
+    NSNumber *rating_average;
+} MovieObject;
 
-@property NSNumber *movie_id;
-@property NSString *title;
-@property NSArray<NSNumber *> *genres;
-@property NSString *description;
-@property NSString *image;
-@property NSNumber *rating_average;
+@interface Movie : NSObject
 
 @end
 
