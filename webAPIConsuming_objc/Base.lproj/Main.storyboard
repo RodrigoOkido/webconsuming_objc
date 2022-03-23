@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RZP-9I-sra">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RZP-9I-sra">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -134,7 +134,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detail_movie_cell" rowHeight="589" id="y8C-vR-THn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detail_movie_cell" rowHeight="589" id="y8C-vR-THn" customClass="DetailCell">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="589"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="y8C-vR-THn" id="yIc-2N-kgV">
@@ -177,8 +177,11 @@
                                                         <constraint firstAttribute="height" constant="194" id="ldS-Gp-KON"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYs-HB-0nY">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aYs-HB-0nY">
                                                     <rect key="frame" x="41" y="271" width="325" height="17"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="318" id="S74-RP-H0E"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -192,6 +195,7 @@
                                                 <constraint firstItem="P7x-uf-LBe" firstAttribute="leading" secondItem="72e-e1-snQ" secondAttribute="trailing" constant="14" id="IMB-bY-iZA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="P7x-uf-LBe" secondAttribute="trailing" constant="28" id="Pbc-RR-S9R"/>
                                                 <constraint firstItem="7xr-kp-RXi" firstAttribute="top" secondItem="72e-e1-snQ" secondAttribute="bottom" constant="18" id="SxT-eb-g3d"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="aYs-HB-0nY" secondAttribute="bottom" id="edn-EF-tO1"/>
                                                 <constraint firstItem="aYs-HB-0nY" firstAttribute="leading" secondItem="yIc-2N-kgV" secondAttribute="leadingMargin" constant="21" id="gSw-iR-WZq"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="aYs-HB-0nY" secondAttribute="trailing" constant="28" id="gjQ-i1-idC"/>
                                                 <constraint firstItem="aYs-HB-0nY" firstAttribute="top" secondItem="7xr-kp-RXi" secondAttribute="bottom" constant="13" id="iTs-OP-wCm"/>
@@ -199,6 +203,13 @@
                                                 <constraint firstItem="72e-e1-snQ" firstAttribute="leading" secondItem="yIc-2N-kgV" secondAttribute="leadingMargin" constant="21" id="mI4-sU-AQz"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descriptionDetail" destination="aYs-HB-0nY" id="Bdx-Ju-Ogb"/>
+                                            <outlet property="genders" destination="VuF-vK-htv" id="cho-Nz-b3p"/>
+                                            <outlet property="imageDetail" destination="72e-e1-snQ" id="c1L-iq-bgw"/>
+                                            <outlet property="ratingDetail" destination="dKJ-05-BXb" id="DkX-jz-SwS"/>
+                                            <outlet property="titleDetail" destination="0P7-uM-Nvs" id="j6c-AT-wFY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
