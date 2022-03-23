@@ -13,10 +13,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property NSArray<Movie *> *popular_movies;
-@property NSArray<Movie *> *now_playing;
-@property int itemSelected;
-@property int rowSelected;
 
 @end
 

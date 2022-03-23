@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSURL *requestNowPlaying;
 
 - (NSDictionary *) getPopularMovie;
+- (NSDictionary *) getNowPlaying;
 
 @end
 
