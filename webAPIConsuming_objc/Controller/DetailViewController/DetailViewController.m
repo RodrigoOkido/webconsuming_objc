@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DetailViewController.h"
+#import "DetailCell.h"
 
 @interface DetailViewController ()
 
@@ -22,12 +23,22 @@
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"detail_movie_cell"];
-    cell.textLabel.text = @"Hello world";
+    DetailCell *cell = (DetailCell *) [tableView dequeueReusableCellWithIdentifier:@"detail_movie_cell"];
+    
+    cell.imageDetail.image = [UIImage systemImageNamed: @"moon"];
+    cell.titleDetail.text = @"Sailor Moon";
+    cell.genders.text = @"Ação, Aventura";
+    cell.ratingDetail.text = @"9.2";
+    cell.descriptionDetail.text = @"Sailor Moon é um anime que conta a hitória de Usagi, uma garota do colegial que um dia se torna uma super heroína com a ajuda de um gato preto misterioso.";
+    
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
 
