@@ -31,9 +31,6 @@
     NSDictionary *now = [req getNowPlaying];
     _popular_movies = pop[@"results"];
     _now_playing = now[@"results"];
-    
-    
-//    NSLog(@"%@", movies[1][@"title"]);
 }
 
 
@@ -60,11 +57,14 @@
     }
     
     if (indexPath.section == 0) {
+        NSString* urlFinal = [NSString stringWithFormat:@"%@%@",@"https://image.tmdb.org/t/p/w500",_popular_movies[indexPath.row][@"poster_path"]];
+        [cell configImage:urlFinal];
         cell.movieTitle.text = _popular_movies[indexPath.row][@"title"];
         cell.movieDescription.text = _popular_movies[indexPath.row][@"overview"];
         cell.movieRating.text = [NSString stringWithFormat:@"%@", _popular_movies[indexPath.row][@"vote_average"]];
-//        cell.movieImage.image = [UIImage systemImageNamed: @"star"];
     } else {
+        NSString* urlFinal = [NSString stringWithFormat:@"%@%@",@"https://image.tmdb.org/t/p/w500",_now_playing[indexPath.row][@"poster_path"]];
+        [cell configImage:urlFinal];
         cell.movieTitle.text = _now_playing[indexPath.row][@"title"];
         cell.movieDescription.text = _now_playing[indexPath.row][@"overview"];
         cell.movieRating.text = [NSString stringWithFormat:@"%@", _now_playing[indexPath.row][@"vote_average"]];
