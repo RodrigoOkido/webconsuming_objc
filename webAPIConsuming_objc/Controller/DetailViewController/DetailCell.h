@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *ratingDetail;
 @property (weak, nonatomic) IBOutlet UILabel *descriptionDetail;
 
+- (void) configImage: (NSString *) url;
+
 @end
 
 

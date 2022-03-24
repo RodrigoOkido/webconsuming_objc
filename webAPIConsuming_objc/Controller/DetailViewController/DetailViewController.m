@@ -11,6 +11,7 @@
 
 @interface DetailViewController ()
 
+
 @end
 
 @implementation DetailViewController
@@ -25,11 +26,12 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     DetailCell *cell = (DetailCell *) [tableView dequeueReusableCellWithIdentifier:@"detail_movie_cell"];
     
-    cell.imageDetail.image = [UIImage systemImageNamed: @"moon"];
-    cell.titleDetail.text = @"Sailor Moon";
+    NSString* urlFinal = _movie.image;
+    [cell configImage:urlFinal];
+    cell.titleDetail.text = _movie.title;
     cell.genders.text = @"Ação, Aventura";
-    cell.ratingDetail.text = @"9.2";
-    cell.descriptionDetail.text = @"Sailor Moon é um anime que conta a hitória de Usagi, uma garota do colegial que um dia se torna uma super heroína com a ajuda de um gato preto misterioso.";
+    cell.ratingDetail.text = _movie.rating_average;
+    cell.descriptionDetail.text = _movie.description;
     
     return cell;
 }
