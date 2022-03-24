@@ -6,10 +6,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Movie.h"
+
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
 
 @end
 

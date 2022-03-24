@@ -6,3 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Movie.h"
+
+
+@implementation Movie
+@end
+
+

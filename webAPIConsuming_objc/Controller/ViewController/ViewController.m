@@ -7,8 +7,14 @@
 
 #import "ViewController.h"
 #import "MovieCell.h"
+#import "Movie.h"
+#import "RequestMovieAPI_TMDB.h"
 
 @interface ViewController ()
+
+@property NSArray *popular_movies;
+@property NSArray *now_playing;
+
 
 @end
 
@@ -16,11 +22,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-
-    // Do any additional setup after loading the view.
+    RequestMovieAPI_TMDB *req = [[RequestMovieAPI_TMDB alloc] init];
+    NSDictionary *pop = [req getPopularMovie];
+    NSDictionary *now = [req getNowPlaying];
+    _popular_movies = pop[@"results"];
+    _now_playing = now[@"results"];
 }
 
 
@@ -45,9 +55,22 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"MovieCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    cell.movieTitle.text = @"Homem Aranha";
-    cell.movieDescription.text = @"Oi";
-    cell.movieImage.image = [UIImage systemImageNamed: @"star"];
+    
+    if (indexPath.section == 0) {
+        NSString* urlFinal = [NSString stringWithFormat:@"%@%@",@"https://image.tmdb.org/t/p/w500",_popular_movies[indexPath.row][@"poster_path"]];
+        [cell configImage:urlFinal];
+        cell.movieTitle.text = _popular_movies[indexPath.row][@"title"];
+        cell.movieDescription.text = _popular_movies[indexPath.row][@"overview"];
+        cell.movieRating.text = [NSString stringWithFormat:@"%@", _popular_movies[indexPath.row][@"vote_average"]];
+    } else {
+        NSString* urlFinal = [NSString stringWithFormat:@"%@%@",@"https://image.tmdb.org/t/p/w500",_now_playing[indexPath.row][@"poster_path"]];
+        [cell configImage:urlFinal];
+        cell.movieTitle.text = _now_playing[indexPath.row][@"title"];
+        cell.movieDescription.text = _now_playing[indexPath.row][@"overview"];
+        cell.movieRating.text = [NSString stringWithFormat:@"%@", _now_playing[indexPath.row][@"vote_average"]];
+//        cell.movieImage.image = [UIImage systemImageNamed: @"star"];
+    }
+    
     
     return cell;
 }
