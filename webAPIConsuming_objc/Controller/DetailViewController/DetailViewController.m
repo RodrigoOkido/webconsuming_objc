@@ -21,6 +21,8 @@
     [super viewDidLoad];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.allowsSelection = false;
+    self.tableView.allowsSelectionDuringEditing = false;
 }
 
 
