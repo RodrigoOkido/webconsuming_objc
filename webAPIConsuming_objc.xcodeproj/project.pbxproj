@@ -15,7 +15,6 @@
 		2B7A63AF27EA14A400062D84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B7A63AD27EA14A400062D84 /* LaunchScreen.storyboard */; };
 		2B7A63B227EA14A400062D84 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63B127EA14A400062D84 /* main.m */; };
 		2B7A63BA27EA173D00062D84 /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63B927EA173D00062D84 /* Movie.m */; };
-		2B7A63BE27EA178500062D84 /* Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63BD27EA178500062D84 /* Gender.m */; };
 		2B7A63C227EA2C1400062D84 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63C127EA2C1400062D84 /* DetailViewController.m */; };
 		2B7A63C627EA387500062D84 /* MovieCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63C527EA387500062D84 /* MovieCell.m */; };
 		2B7A63CF27EB844600062D84 /* RequestMovieAPI_TMDB.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B7A63CE27EB844600062D84 /* RequestMovieAPI_TMDB.m */; };
@@ -37,8 +36,6 @@
 		2B7A63B127EA14A400062D84 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2B7A63B927EA173D00062D84 /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		2B7A63BC27EA176600062D84 /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
-		2B7A63BD27EA178500062D84 /* Gender.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Gender.m; sourceTree = "<group>"; };
-		2B7A63BF27EA179300062D84 /* Gender.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gender.h; sourceTree = "<group>"; };
 		2B7A63C127EA2C1400062D84 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		2B7A63C327EA2C2400062D84 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		2B7A63C527EA387500062D84 /* MovieCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieCell.m; sourceTree = "<group>"; };
@@ -109,8 +106,6 @@
 			children = (
 				2B7A63B927EA173D00062D84 /* Movie.m */,
 				2B7A63BC27EA176600062D84 /* Movie.h */,
-				2B7A63BD27EA178500062D84 /* Gender.m */,
-				2B7A63BF27EA179300062D84 /* Gender.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -220,7 +215,6 @@
 				2B7A63A127EA14A300062D84 /* AppDelegate.m in Sources */,
 				2B7A63BA27EA173D00062D84 /* Movie.m in Sources */,
 				2B7A63B227EA14A400062D84 /* main.m in Sources */,
-				2B7A63BE27EA178500062D84 /* Gender.m in Sources */,
 				2B7A63CF27EB844600062D84 /* RequestMovieAPI_TMDB.m in Sources */,
 				CCDDEC1027EA659000D316FD /* DetailCell.m in Sources */,
 				2B7A63A427EA14A300062D84 /* SceneDelegate.m in Sources */,
