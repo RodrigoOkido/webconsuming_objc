@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RZP-9I-sra">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RZP-9I-sra">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -140,22 +140,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="P7x-uf-LBe">
-                                                    <rect key="frame" x="184.5" y="114" width="181.5" height="96"/>
+                                                    <rect key="frame" x="184.5" y="101" width="181.5" height="109"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P7-uM-Nvs">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P7-uM-Nvs">
                                                             <rect key="frame" x="0.0" y="0.0" width="181.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VuF-vK-htv">
-                                                            <rect key="frame" x="0.0" y="43.5" width="181.5" height="18"/>
+                                                            <rect key="frame" x="0.0" y="50" width="181.5" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" systemColor="systemGrayColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="rba-rI-YYy">
-                                                            <rect key="frame" x="0.0" y="84" width="181.5" height="12"/>
+                                                            <rect key="frame" x="0.0" y="97" width="181.5" height="12"/>
                                                             <subviews>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="SHA-T2-ELJ">
                                                                     <rect key="frame" x="0.0" y="-0.5" width="12" height="12"/>
@@ -199,7 +199,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="P7x-uf-LBe" firstAttribute="top" secondItem="yIc-2N-kgV" secondAttribute="topMargin" constant="103" id="1p9-aB-hgh"/>
+                                                <constraint firstItem="P7x-uf-LBe" firstAttribute="top" secondItem="yIc-2N-kgV" secondAttribute="topMargin" constant="90" id="1p9-aB-hgh"/>
                                                 <constraint firstItem="7xr-kp-RXi" firstAttribute="leading" secondItem="yIc-2N-kgV" secondAttribute="leadingMargin" constant="21" id="3Nf-sF-Z05"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="7xr-kp-RXi" secondAttribute="trailing" constant="28" id="43X-sp-pum"/>
                                                 <constraint firstItem="7xr-kp-RXi" firstAttribute="top" secondItem="P7x-uf-LBe" secondAttribute="bottom" constant="31" id="90i-jY-NxN"/>
