@@ -63,15 +63,26 @@
 }
 
 
-- (void) loadPopularMovies {
-    NSDictionary *popular_movies = self.getPopularMovie;
-    NSArray *movies = popular_movies[@"results"];
-    NSArray<Movie *> *popMovies;
-    for (int i = 0; i <= 1; i++) {
-        MovieObject movie;
-        movie.title = movies[i][@"title"];
-        movie.description = movies[i][@"overview"];
+- (NSDictionary *) getGenres: (NSNumber *) movie_id {
+    NSString* urlFinal = [NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/%@?api_key=3b3fe42086419ba7768f061008414e5b", movie_id];
+    _requestGenre = [NSURL URLWithString: urlFinal];
+
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setHTTPMethod:@"GET"];
+    [request setURL:_requestGenre];
+
+    NSError *error = nil;
+    NSHTTPURLResponse *responseCode = nil;
+
+    NSData *oResponseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&responseCode error:&error];
+
+    if([responseCode statusCode] != 200){
+//        NSLog(@"Error getting %@, HTTP status code %i", _requestPopularUrl, [responseCode statusCode]);
+        return nil;
     }
+    
+    return [NSJSONSerialization JSONObjectWithData:oResponseData options:NSJSONReadingAllowFragments error: &error];
 }
+
 
 @end

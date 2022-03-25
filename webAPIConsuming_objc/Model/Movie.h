@@ -14,11 +14,11 @@ typedef struct Movie {
     NSArray<NSNumber *> *genres;
     NSString *description;
     NSString *image;
-    NSNumber *rating_average;
+    NSString *rating_average;
 } MovieObject;
 
 @interface Movie : NSObject
-
+MovieObject initMovie (void);
 @end
 
 #endif /* Movie_h */

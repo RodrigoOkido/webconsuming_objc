@@ -9,12 +9,14 @@
 #import "MovieCell.h"
 #import "Movie.h"
 #import "RequestMovieAPI_TMDB.h"
+#import "DetailViewController.h"
 
 @interface ViewController ()
 
 @property NSArray *popular_movies;
 @property NSArray *now_playing;
-
+@property long sectionSelected;
+@property long rowSelected;
 
 @end
 
@@ -89,8 +91,37 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // Make sure your segue name in storyboard is the same as this line
+    if ([[segue identifier] isEqualToString:@"movieId"])
+    {
+        // Get reference to the destination view controller
+        DetailViewController *detailvc = [segue destinationViewController];
+        self.sectionSelected = _tableView.indexPathForSelectedRow.section;
+        //[self.sectionSelected = [detailvc.tableView.indexPathForSelectedRow.section];
+        if (self.sectionSelected == 0) {
+            self.rowSelected = _tableView.indexPathForSelectedRow.row;
+            MovieObject movie = initMovie();
+            NSString* urlFinal = [NSString stringWithFormat:@"%@%@",@"https://image.tmdb.org/t/p/w500",_popular_movies[self.rowSelected][@"poster_path"]];
+            movie.image = urlFinal;
+            movie.movie_id = _popular_movies[self.rowSelected][@"id"];
+            movie.title = _popular_movies[self.rowSelected][@"title"];
+            movie.description = _popular_movies[self.rowSelected][@"overview"];
+            movie.rating_average = [NSString stringWithFormat:@"%@", _popular_movies[self.rowSelected][@"vote_average"]];
+            detailvc.movie = movie;
+        } else {
+            self.rowSelected = _tableView.indexPathForSelectedRow.row;
+            MovieObject movie = initMovie();
+            NSString* urlFinal = [NSString stringWithFormat:@"%@%@",@"https://image.tmdb.org/t/p/w500",_now_playing[self.rowSelected][@"poster_path"]];
+            movie.image = urlFinal;
+            movie.movie_id = _now_playing[self.rowSelected][@"id"];
+            movie.title = _now_playing[self.rowSelected][@"title"];
+            movie.description = _now_playing[self.rowSelected][@"overview"];
+            movie.rating_average = [NSString stringWithFormat:@"%@", _now_playing[self.rowSelected][@"vote_average"]];
+            detailvc.movie = movie;
+        }
+    }
 }
 
 @end

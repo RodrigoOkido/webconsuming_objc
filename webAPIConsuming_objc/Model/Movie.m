@@ -10,6 +10,16 @@
 
 
 @implementation Movie
+
+MovieObject initMovie () {
+    MovieObject movie;
+    movie.title = @"";
+    movie.description = @"";
+    movie.rating_average = [NSString stringWithFormat:@""];
+
+    return movie;
+}
+
 @end
 
 

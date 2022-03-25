@@ -7,9 +7,11 @@
 
 #import <Foundation/Foundation.h>
 #import "DetailViewController.h"
+#import "RequestMovieAPI_TMDB.h"
 #import "DetailCell.h"
 
 @interface DetailViewController ()
+
 
 @end
 
@@ -25,13 +27,35 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     DetailCell *cell = (DetailCell *) [tableView dequeueReusableCellWithIdentifier:@"detail_movie_cell"];
     
-    cell.imageDetail.image = [UIImage systemImageNamed: @"moon"];
-    cell.titleDetail.text = @"Sailor Moon";
-    cell.genders.text = @"Ação, Aventura";
-    cell.ratingDetail.text = @"9.2";
-    cell.descriptionDetail.text = @"Sailor Moon é um anime que conta a hitória de Usagi, uma garota do colegial que um dia se torna uma super heroína com a ajuda de um gato preto misterioso.";
+    NSString* urlFinal = _movie.image;
+    [cell configImage:urlFinal];
+    cell.titleDetail.text = _movie.title;
+    cell.genders.text = [self getGenders:_movie.movie_id];
+    cell.ratingDetail.text = _movie.rating_average;
+    cell.descriptionDetail.text = _movie.description;
     
     return cell;
+}
+
+- (NSString *)getGenders:(NSNumber *) movie_id {
+    RequestMovieAPI_TMDB *req = [[RequestMovieAPI_TMDB alloc]init];
+    NSDictionary *dict = [req getGenres:movie_id];
+    NSArray *genreList = dict[@"genres"];
+    NSString *finalGenres = @"";
+    NSString* genreName;
+    
+    for (int i = 0; i < genreList.count; i++)
+    {
+        NSDictionary *genre = genreList[i];
+        if (genreList.count == 1 || i == (genreList.count - 1)) {
+            genreName = [NSString stringWithFormat:@"%@ ", genre[@"name"]];
+        } else {
+            genreName = [NSString stringWithFormat:@"%@, ", genre[@"name"]];
+        }
+        finalGenres = [finalGenres stringByAppendingString: genreName];
+    }
+    
+    return finalGenres;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
