@@ -42,11 +42,16 @@
     NSDictionary *dict = [req getGenres:movie_id];
     NSArray *genreList = dict[@"genres"];
     NSString *finalGenres = @"";
+    NSString* genreName;
     
     for (int i = 0; i < genreList.count; i++)
     {
         NSDictionary *genre = genreList[i];
-        NSString* genreName = [NSString stringWithFormat:@"%@, ", genre[@"name"]];
+        if (genreList.count == 1 || i == (genreList.count - 1)) {
+            genreName = [NSString stringWithFormat:@"%@ ", genre[@"name"]];
+        } else {
+            genreName = [NSString stringWithFormat:@"%@, ", genre[@"name"]];
+        }
         finalGenres = [finalGenres stringByAppendingString: genreName];
     }
     
