@@ -77,7 +77,7 @@
         [fmt setNumberStyle:NSNumberFormatterDecimalStyle];
         [fmt setMaximumFractionDigits:2];
         [fmt setRoundingMode: NSNumberFormatterRoundUp];
-        cell.movieRating.text = [fmt stringFromNumber: _popular_movies[indexPath.row][@"vote_average"]];//        cell.movieImage.image = [UIImage systemImageNamed: @"star"];
+        cell.movieRating.text = [fmt stringFromNumber: _now_playing[indexPath.row][@"vote_average"]];//        cell.movieImage.image = [UIImage systemImageNamed: @"star"];
     }
     
     
