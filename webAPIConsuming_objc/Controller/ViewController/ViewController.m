@@ -63,14 +63,21 @@
         [cell configImage:urlFinal];
         cell.movieTitle.text = _popular_movies[indexPath.row][@"title"];
         cell.movieDescription.text = _popular_movies[indexPath.row][@"overview"];
-        cell.movieRating.text = [NSString stringWithFormat:@"%@", _popular_movies[indexPath.row][@"vote_average"]];
+        NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
+        [fmt setNumberStyle:NSNumberFormatterDecimalStyle];
+        [fmt setMaximumFractionDigits:2];
+        [fmt setRoundingMode: NSNumberFormatterRoundUp];
+        cell.movieRating.text = [fmt stringFromNumber: _popular_movies[indexPath.row][@"vote_average"]];
     } else {
         NSString* urlFinal = [NSString stringWithFormat:@"%@%@",@"https://image.tmdb.org/t/p/w500",_now_playing[indexPath.row][@"poster_path"]];
         [cell configImage:urlFinal];
         cell.movieTitle.text = _now_playing[indexPath.row][@"title"];
         cell.movieDescription.text = _now_playing[indexPath.row][@"overview"];
-        cell.movieRating.text = [NSString stringWithFormat:@"%@", _now_playing[indexPath.row][@"vote_average"]];
-//        cell.movieImage.image = [UIImage systemImageNamed: @"star"];
+        NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
+        [fmt setNumberStyle:NSNumberFormatterDecimalStyle];
+        [fmt setMaximumFractionDigits:2];
+        [fmt setRoundingMode: NSNumberFormatterRoundUp];
+        cell.movieRating.text = [fmt stringFromNumber: _popular_movies[indexPath.row][@"vote_average"]];//        cell.movieImage.image = [UIImage systemImageNamed: @"star"];
     }
     
     
@@ -108,7 +115,11 @@
             movie.movie_id = _popular_movies[self.rowSelected][@"id"];
             movie.title = _popular_movies[self.rowSelected][@"title"];
             movie.description = _popular_movies[self.rowSelected][@"overview"];
-            movie.rating_average = [NSString stringWithFormat:@"%@", _popular_movies[self.rowSelected][@"vote_average"]];
+            NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
+            [fmt setNumberStyle:NSNumberFormatterDecimalStyle];
+            [fmt setMaximumFractionDigits:2];
+            [fmt setRoundingMode: NSNumberFormatterRoundUp];
+            movie.rating_average = [fmt stringFromNumber: _popular_movies[self.rowSelected][@"vote_average"]];
             detailvc.movie = movie;
         } else {
             self.rowSelected = _tableView.indexPathForSelectedRow.row;
@@ -118,7 +129,11 @@
             movie.movie_id = _now_playing[self.rowSelected][@"id"];
             movie.title = _now_playing[self.rowSelected][@"title"];
             movie.description = _now_playing[self.rowSelected][@"overview"];
-            movie.rating_average = [NSString stringWithFormat:@"%@", _now_playing[self.rowSelected][@"vote_average"]];
+            NSNumberFormatter *fmt = [[NSNumberFormatter alloc] init];
+            [fmt setNumberStyle:NSNumberFormatterDecimalStyle];
+            [fmt setMaximumFractionDigits:2];
+            [fmt setRoundingMode: NSNumberFormatterRoundUp];
+            movie.rating_average = [fmt stringFromNumber: _now_playing[self.rowSelected][@"vote_average"]];
             detailvc.movie = movie;
         }
     }
