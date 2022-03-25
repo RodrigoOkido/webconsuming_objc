@@ -109,6 +109,7 @@
             MovieObject movie = initMovie();
             NSString* urlFinal = [NSString stringWithFormat:@"%@%@",@"https://image.tmdb.org/t/p/w500",_popular_movies[self.rowSelected][@"poster_path"]];
             movie.image = urlFinal;
+            movie.movie_id = _popular_movies[self.rowSelected][@"id"];
             movie.title = _popular_movies[self.rowSelected][@"title"];
             movie.description = _popular_movies[self.rowSelected][@"overview"];
             movie.rating_average = [NSString stringWithFormat:@"%@", _popular_movies[self.rowSelected][@"vote_average"]];
@@ -118,13 +119,12 @@
             MovieObject movie = initMovie();
             NSString* urlFinal = [NSString stringWithFormat:@"%@%@",@"https://image.tmdb.org/t/p/w500",_now_playing[self.rowSelected][@"poster_path"]];
             movie.image = urlFinal;
+            movie.movie_id = _now_playing[self.rowSelected][@"id"];
             movie.title = _now_playing[self.rowSelected][@"title"];
             movie.description = _now_playing[self.rowSelected][@"overview"];
             movie.rating_average = [NSString stringWithFormat:@"%@", _now_playing[self.rowSelected][@"vote_average"]];
             detailvc.movie = movie;
         }
-        // Pass any objects to the view controller here, like...
-        //[vc setMyObjectHere: ];
     }
 
 }

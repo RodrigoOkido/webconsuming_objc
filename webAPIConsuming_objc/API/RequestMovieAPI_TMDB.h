@@ -12,9 +12,13 @@
 
 @property (nonatomic, strong) NSURL *requestPopularUrl;
 @property (nonatomic, strong) NSURL *requestNowPlaying;
+@property (nonatomic, strong) NSURL *requestGenre;
+@property (nonatomic, strong) NSMutableString *movie_genre;
 
 - (NSDictionary *) getPopularMovie;
 - (NSDictionary *) getNowPlaying;
+- (NSDictionary *) getGenres: (NSNumber *) movie_id;
+
 
 @end
 

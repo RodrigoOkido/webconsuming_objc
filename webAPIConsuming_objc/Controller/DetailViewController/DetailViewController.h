@@ -13,5 +13,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property MovieObject movie;
 
+
+- (NSString *)getGenders:(NSNumber *) movie_id;
+
 @end
 
