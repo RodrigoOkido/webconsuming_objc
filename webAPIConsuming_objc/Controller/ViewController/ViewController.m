@@ -36,6 +36,7 @@
 }
 
 
+// MARK: - TABLEVIEW DELEGATE & DATA SOURCE FUNCTIONS
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
@@ -77,12 +78,12 @@
         [fmt setNumberStyle:NSNumberFormatterDecimalStyle];
         [fmt setMaximumFractionDigits:2];
         [fmt setRoundingMode: NSNumberFormatterRoundUp];
-        cell.movieRating.text = [fmt stringFromNumber: _now_playing[indexPath.row][@"vote_average"]];//        cell.movieImage.image = [UIImage systemImageNamed: @"star"];
+        cell.movieRating.text = [fmt stringFromNumber: _now_playing[indexPath.row][@"vote_average"]];
     }
-    
     
     return cell;
 }
+
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
@@ -102,6 +103,7 @@
     return 138;
 }
 
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Make sure your segue name in storyboard is the same as this line
@@ -110,7 +112,6 @@
         // Get reference to the destination view controller
         DetailViewController *detailvc = [segue destinationViewController];
         self.sectionSelected = _tableView.indexPathForSelectedRow.section;
-        //[self.sectionSelected = [detailvc.tableView.indexPathForSelectedRow.section];
         if (self.sectionSelected == 0) {
             self.rowSelected = _tableView.indexPathForSelectedRow.row;
             MovieObject movie = initMovie();

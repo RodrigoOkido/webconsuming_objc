@@ -18,7 +18,9 @@ typedef struct Movie {
 } MovieObject;
 
 @interface Movie : NSObject
-MovieObject initMovie (void);
+
+    MovieObject initMovie (void);
+
 @end
 
 #endif /* Movie_h */

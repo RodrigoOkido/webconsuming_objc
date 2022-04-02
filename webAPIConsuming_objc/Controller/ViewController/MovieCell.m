@@ -15,12 +15,14 @@
 @implementation MovieCell
 
 
+/**
+ Load and configure each movie information data on the cell.
+ */
 - (void) configImage:(NSString *)imageUrl {
     
     NSURL *url = [NSURL URLWithString: imageUrl];
     
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(void){
-        
         @try {
             NSData *data = [NSData dataWithContentsOfURL: url];
             UIImage *image = [UIImage imageWithData: data];
@@ -34,7 +36,8 @@
         }
     });
 }
-    
+  
+
 - (void)prepareForReuse {
     [super prepareForReuse];
     _movieImage.image = nil;
@@ -43,9 +46,11 @@
     _movieRating.text = @"";
 }
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
+
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
